@@ -1,7 +1,8 @@
 # portal-de-noticias-SportingMedia
 Componentes: Felipe Cota, Marcelo Reis, Augusto Gama, Tiago Lage, Joshua Azze, Igor Conrado
 
-Primeira parte do projeto: Escolher paleta de cor:  https://coolors.co/palette/0a1128-001f54-034078-1282a2-fefcfb
+Primeira parte do projeto: Escolher paleta de cor:  
+    link: https://coolors.co/palette/0a1128-001f54-034078-1282a2-fefcfb
 
 Código Hex:
     202020;
@@ -10,3 +11,7 @@ Código Hex:
     034078;
     1282A2;
     FEFVFB.
+
+Escolha da Fonte utilizada:
+    Inter | Designed by Ramus Andersson
+    link: https://fonts.google.com/specimen/Inter
