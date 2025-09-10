@@ -1,2 +1,2 @@
 # portal-de-noticias-SportingMedia
-Componentes: Felipe Cota, Marcelo Reis, Augusto Gama, Thiago Lage, Joshua Azze, Igor Conrado
+Componentes: Felipe Cota, Marcelo Reis, Augusto Gama, Tiago Lage, Joshua Azze, Igor Conrado
