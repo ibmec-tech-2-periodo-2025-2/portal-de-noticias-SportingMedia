@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 10vh;
     width: 100vw;
     background-color: azure;
 }
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     height: 10vh;
     width: 100vw;
     background-color: azure;
@@ -51,4 +57,26 @@ footer {
     border: solid black 1px;
     grid-row: 4/6;
     margin: 4px;
+}
+.noticias {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(7,1fr);
+}
+.imagem-noticia {
+    border: solid black 1px;
+    margin: 4px;
+    grid-row: 1/8;
+    grid-column: 1/3;
+}
+.texto-noticia {
+    border: solid black 1px;
+    margin: 4px;
+    grid-column: 3/6;
+}
+#texto-noticia-titulo {
+    grid-row: 1/3;
+}
+#texto-noticia-subtitulo {
+    grid-row: 3/7;
 }
