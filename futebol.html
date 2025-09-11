@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Futebol</title>
-  <link rel="stylesheet" href="futebol.css">
+  <link rel="stylesheet" href="futebol.css"/>
 </head>
 <body>
   <header>HEADER</header>
@@ -12,44 +12,211 @@
   <main id="corpo">
     <div class="subcorpoE">
       <!-- NOTÍCIA 1 -->
-      <div class="noticias">
-        <div class="imagem-noticia" id="img1">IMAGEM 1</div>
-        <div class="texto-noticia titulo">Futebol Nacional - Atlético-MG</div>
-        <div class="texto-noticia subtitulo"><h1>Escalação do Atlético-MG: dupla retorna das Eliminatórias e deixa Galo completo para decisão</h1></div>
-        <div class="texto-noticia corpo">Alan Franco e Ivan Román se apresentam ao técnico Jorge Sampaoli na manhã desta quinta-feira</div>
-      </div>
+      <article class="noticias">
+        <div class="imagem-noticia" id="img1" aria-label="Imagem da notícia 1"></div>
+        <div class="texto-noticia titulo">
+          <span class="categoria">Futebol Nacional • Atlético-MG</span>
+        </div>
+        <div class="texto-noticia subtitulo">
+          <h1>Escalação do Atlético-MG: dupla retorna das Eliminatórias e deixa Galo completo para decisão</h1>
+        </div>
+        <div class="texto-noticia corpo">
+          Alan Franco e Ivan Román se apresentam ao técnico Jorge Sampaoli na manhã desta quinta-feira
+        </div>
+      </article>
 
       <!-- NOTÍCIA 2 -->
-      <div class="noticias">
-        <div class="imagem-noticia" id="img2">IMAGEM 2</div>
-        <div class="texto-noticia titulo">TÍTULO 2</div>
-        <div class="texto-noticia subtitulo">SUBTÍTULO 2</div>
-        <div class="texto-noticia corpo">DESCRIÇÃO 2</div>
-      </div>
+      <article class="noticias">
+        <div class="imagem-noticia" id="img2"></div>
+        <div class="texto-noticia titulo"><span class="categoria">Título 2</span></div>
+        <div class="texto-noticia subtitulo"><h1>Subtítulo 2</h1></div>
+        <div class="texto-noticia corpo">Descrição 2</div>
+      </article>
 
       <!-- NOTÍCIA 3 -->
-      <div class="noticias">
-        <div class="imagem-noticia" id="img3">IMAGEM 3</div>
-        <div class="texto-noticia titulo">Futebol Internacional - Eliminatórias Eurocopa</div>
+      <article class="noticias">
+        <div class="imagem-noticia" id="img3"></div>
+        <div class="texto-noticia titulo"><span class="categoria">Futebol Internacional • Eliminatórias Eurocopa</span></div>
         <div class="texto-noticia subtitulo"><h1>Haaland pede desculpas a goleiro rival após fazer cinco gols em vitória histórica da Noruega</h1></div>
         <div class="texto-noticia corpo">Seleção norueguesa goleou a Moldávia por 11 a 1 pelas eliminatórias da Europa. Ao fim do jogo, atacante foi falar com goleiro adversário</div>
-      </div>
+      </article>
 
       <!-- NOTÍCIA 4 -->
-      <div class="noticias">
-        <div class="imagem-noticia" id="img4">IMAGEM 4</div>
-        <div class="texto-noticia titulo">TÍTULO 4</div>
-        <div class="texto-noticia subtitulo">SUBTÍTULO 4</div>
-        <div class="texto-noticia corpo">DESCRIÇÃO 4</div>
-      </div>
+      <article class="noticias">
+        <div class="imagem-noticia" id="img4"></div>
+        <div class="texto-noticia titulo"><span class="categoria">Título 4</span></div>
+        <div class="texto-noticia subtitulo"><h1>Subtítulo 4</h1></div>
+        <div class="texto-noticia corpo">Descrição 4</div>
+      </article>
     </div>
 
-    <div class="subcorpoD">
-      <div class="tabelas1">TABELA 1</div>
-      <div class="tabelas2">TABELA 2</div>
-    </div>
+    <aside class="subcorpoD">
+      <!-- TABELA 1: BRASILEIRÃO (DARK) -->
+      <div class="tabelas1">
+        <div class="tabela dark">
+          <h2 id="br-title">Brasileirão - Série A</h2>
+
+          <!-- Tabela responsiva: cabeçalho e colgroup são preenchidos via JS -->
+          <table id="br-table" class="standings">
+            <colgroup id="br-colgroup"></colgroup>
+            <thead><tr id="br-head"></tr></thead>
+            <tbody id="br-standings"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TABELA 2: RESERVADA -->
+      <div class="tabelas2">
+        <div class="tabela dark"><h2>Em breve</h2></div>
+      </div>
+    </aside>
   </main>
 
   <footer>FOOTER</footer>
+
+  <script>
+    // ===== Logos (Wikipedia Commons) =====
+    const logos = {
+      "Flamengo": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Flamengo_braz_logo.svg",
+      "Cruzeiro": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cruzeiro_Esporte_Clube_%28logo%29.svg",
+      "Palmeiras": "https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg",
+      "Bahia": "https://upload.wikimedia.org/wikipedia/commons/3/35/Esporte_Clube_Bahia_logo.svg",
+      "Botafogo": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Botafogo_de_Futebol_e_Regatas_logo.svg",
+      "Mirassol": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Mirassol_Futebol_Clube_logo.svg",
+      "São Paulo": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Sao_Paulo_Futebol_Clube.svg",
+      "Bragantino": "https://upload.wikimedia.org/wikipedia/en/3/38/RedBullBragantino.svg",
+      "Fluminense": "https://upload.wikimedia.org/wikipedia/commons/8/88/Fluminense_FC_escudo.png",
+      "Internacional": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Escudo_do_Sport_Club_Internacional.svg",
+      "Ceará SC": "https://upload.wikimedia.org/wikipedia/commons/6/65/CearaSC.svg",
+      "Corinthians": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Sport_Club_Corinthians_Paulista_crest.svg",
+      "Grêmio": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Gremio_logo.svg",
+      "Atlético-MG": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Clube_Atletico_Mineiro_logo.svg",
+      "Vasco da Gama": "https://upload.wikimedia.org/wikipedia/commons/0/05/CRVascodaGama.svg",
+      "Santos": "https://upload.wikimedia.org/wikipedia/commons/3/35/Santos_logo.svg",
+      "EC Vitória": "https://upload.wikimedia.org/wikipedia/commons/9/98/EC_Vitoria_logo.svg",
+      "Juventude": "https://upload.wikimedia.org/wikipedia/commons/8/8b/EC_Juventude_logo.svg",
+      "Fortaleza": "https://upload.wikimedia.org/wikipedia/commons/8/8d/FortalezaEsporteClube.svg",
+      "Sport Recife": "https://upload.wikimedia.org/wikipedia/commons/5/56/Sport_Club_Recife.svg"
+    };
+
+    // ===== Dados (seus números) =====
+    const brasileirao = [
+      { clube:"Flamengo", pts:47, pj:21, vit:14, e:5, der:2, gm:45, gc:10, sg:35 },
+      { clube:"Cruzeiro", pts:44, pj:22, vit:13, e:5, der:4, gm:35, gc:15, sg:20 },
+      { clube:"Palmeiras", pts:43, pj:20, vit:13, e:4, der:3, gm:28, gc:16, sg:12 },
+      { clube:"Bahia", pts:36, pj:20, vit:10, e:6, der:4, gm:28, gc:22, sg:6 },
+      { clube:"Botafogo", pts:35, pj:20, vit:10, e:5, der:5, gm:30, gc:13, sg:17 },
+      { clube:"Mirassol", pts:35, pj:20, vit:9, e:8, der:3, gm:35, gc:20, sg:15 },
+      { clube:"São Paulo", pts:32, pj:22, vit:8, e:8, der:6, gm:26, gc:23, sg:3 },
+      { clube:"Bragantino", pts:30, pj:22, vit:9, e:3, der:10, gm:27, gc:32, sg:-5 },
+      { clube:"Fluminense", pts:28, pj:20, vit:8, e:4, der:8, gm:25, gc:28, sg:-3 },
+      { clube:"Internacional", pts:27, pj:21, vit:7, e:6, der:8, gm:25, gc:29, sg:-4 },
+      { clube:"Ceará SC", pts:26, pj:21, vit:7, e:5, der:9, gm:19, gc:20, sg:-1 },
+      { clube:"Corinthians", pts:26, pj:22, vit:6, e:8, der:8, gm:23, gc:28, sg:-5 },
+      { clube:"Grêmio", pts:25, pj:21, vit:6, e:7, der:8, gm:20, gc:26, sg:-6 },
+      { clube:"Atlético-MG", pts:24, pj:20, vit:6, e:6, der:8, gm:20, gc:24, sg:-4 },
+      { clube:"Vasco da Gama", pts:22, pj:21, vit:6, e:4, der:11, gm:30, gc:31, sg:-1 },
+      { clube:"Santos", pts:22, pj:21, vit:6, e:4, der:11, gm:20, gc:31, sg:-11 },
+      { clube:"EC Vitória", pts:22, pj:22, vit:4, e:10, der:8, gm:19, gc:32, sg:-13 },
+      { clube:"Juventude", pts:21, pj:21, vit:6, e:3, der:12, gm:19, gc:41, sg:-22 },
+      { clube:"Fortaleza", pts:15, pj:21, vit:3, e:6, der:12, gm:20, gc:34, sg:-14 },
+      { clube:"Sport Recife", pts:10, pj:20, vit:1, e:7, der:12, gm:14, gc:33, sg:-19 }
+    ].map(t => ({ ...t, logo: logos[t.clube] || "" }));
+
+    // ===== Helpers =====
+    const monoSVG = (name) => {
+      const initials = name.split(/\s+/).map(w => w[0]).slice(0,3).join('').toUpperCase();
+      const svg = `
+        <svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 32 32'>
+          <rect width='32' height='32' rx='6' ry='6' fill='#222'/>
+          <text x='50%' y='55%' font-family='Inter, Arial, sans-serif' font-size='14' fill='#fff' text-anchor='middle'>${initials}</text>
+        </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    };
+
+    function faixaClass(pos) {
+      if (pos <= 6)  return 'z-liberta';
+      if (pos <= 12) return 'z-sula';
+      if (pos <= 16) return 'z-meio';
+      return 'z-z4';
+    }
+
+    // ===== Renderização responsiva (duas versões sem esconder colunas) =====
+    const brTable    = document.getElementById('br-table');
+    const brHeadRow  = document.getElementById('br-head');
+    const brColgroup = document.getElementById('br-colgroup');
+    const brTbody    = document.getElementById('br-standings');
+    const mqDesktop  = window.matchMedia('(min-width: 769px)');
+
+    function setHead(cols) {
+      brHeadRow.innerHTML = cols.map(t => `<th>${t}</th>`).join('');
+    }
+    function setCols(list) {
+      brColgroup.innerHTML = list.map(c => `<col class="${c}">`).join('');
+    }
+
+    function render(mode) {
+      const size = 28;
+
+      if (mode === 'compact') {
+        // Desktop: Logo, Clube, Pts, PJ, SG
+        brTable.classList.add('compact');
+        setHead(['Logo','Clube','Pts','PJ','SG']);
+        setCols(['c-logo','c-clube','c-num','c-num','c-num']);
+
+        brTbody.innerHTML = brasileirao.map((t, i) => `
+          <tr class="${faixaClass(i + 1)}">
+            <td class="logo-cell">
+              <img class="escudo" width="${size}" height="${size}"
+                   loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                   data-team="${t.clube}" src="${t.logo || monoSVG(t.clube)}"
+                   alt="Escudo do ${t.clube}">
+            </td>
+            <td class="club">${t.clube}</td>
+            <td class="pts">${t.pts}</td>
+            <td>${t.pj}</td>
+            <td>${t.sg}</td>
+          </tr>
+        `).join('');
+
+      } else {
+        // Mobile/Tablet: completa
+        brTable.classList.remove('compact');
+        setHead(['Pos','Logo','Clube','Pts','PJ','VIT','E','DER','GM','GC','SG']);
+        setCols(['c-pos','c-logo','c-clube','c-num','c-num','c-num','c-num','c-num','c-num','c-num','c-num']);
+
+        brTbody.innerHTML = brasileirao.map((t, i) => `
+          <tr class="${faixaClass(i + 1)}">
+            <td>${i + 1}</td>
+            <td class="logo-cell">
+              <img class="escudo" width="${size}" height="${size}"
+                   loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                   data-team="${t.clube}" src="${t.logo || monoSVG(t.clube)}"
+                   alt="Escudo do ${t.clube}">
+            </td>
+            <td class="club">${t.clube}</td>
+            <td class="pts">${t.pts}</td>
+            <td>${t.pj}</td>
+            <td>${t.vit}</td>
+            <td>${t.e}</td>
+            <td>${t.der}</td>
+            <td>${t.gm}</td>
+            <td>${t.gc}</td>
+            <td>${t.sg}</td>
+          </tr>
+        `).join('');
+      }
+
+      // Fallback de logo
+      document.querySelectorAll('.escudo').forEach(img => {
+        const team = img.dataset.team;
+        img.onerror = () => { img.src = monoSVG(team); };
+      });
+    }
+
+    function updateTable(){ render(mqDesktop.matches ? 'compact' : 'full'); }
+    mqDesktop.addEventListener('change', updateTable);
+    updateTable();
+  </script>
 </body>
 </html>
