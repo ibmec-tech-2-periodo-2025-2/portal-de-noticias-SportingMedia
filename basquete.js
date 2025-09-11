@@ -17,7 +17,7 @@ const data = {
         {team:"Detroit Pistons",wins:14,losses:68,logo:"https://cdn.nba.com/logos/nba/1610612765/global/L/logo.svg"}
     ],
     West: [
-        {team:"Oklahoma City Thunder",wins:57,losses:25,logo:"https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg"},
+        {team:"Oklahoma City Thunder 🏆",wins:57,losses:25,logo:"https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg"},
         {team:"Denver Nuggets",wins:57,losses:25,logo:"https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg"},
         {team:"Minnesota Timberwolves",wins:56,losses:26,logo:"https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg"},
         {team:"Los Angeles Clippers",wins:51,losses:31,logo:"https://cdn.nba.com/logos/nba/1610612746/global/L/logo.svg"},
@@ -47,4 +47,4 @@ const render = conf => {
 
 eastBtn.onclick = () => render('East');
 westBtn.onclick = () => render('West');
-render('East');
+render('West');
