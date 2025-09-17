@@ -105,12 +105,12 @@ footer{
 
     .menu-selecao{
     background-color: #001F54;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 400;
     color: #FEFCFB;
     display: flex;
-    justify-content: space-evenly;
-    /* gap: 40px; */
+    justify-content:center;
+    gap: 4px;
     border-bottom: solid #0A1128 2px;
     }
 
@@ -160,6 +160,6 @@ footer{
         gap: 5px;
         justify-content: space-evenly;
         align-items: center;
-        font-size: 9px;
+        font-size: 12px;
     }
 }
