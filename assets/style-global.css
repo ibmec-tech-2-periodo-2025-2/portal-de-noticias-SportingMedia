@@ -45,3 +45,8 @@ section div{
     border-left: solid #034078 2px;
     padding: 10px;
 }
+
+footer{
+    background-color: #0A1128;
+    color: #FEFCFB;
+}
