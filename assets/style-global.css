@@ -2,8 +2,46 @@
     margin: 0;
     padding: border-box;
     box-sizing: border-box;
+    font-family: "Inter";
 }
 
-header{
-    background-color: #001f54;
+.cabecalho{
+    background-color: #034078;
+    display: flex;
+    align-items: center;
+    border-bottom: solid #0A1128 2px;
+}
+
+.logo{
+    height: 70px;
+    margin:10px
+}
+
+header h1{
+    color: #FEFCFB;
+    font-size: 30px;
+}
+
+.menu{
+    height:40px;
+    position: absolute;
+    right: 0px;
+    margin: 10px;
+}
+
+.menu-selecao{
+    background-color: #001F54;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FEFCFB;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    border-bottom: solid #0A1128 2px;
+}
+
+section div{
+    border-right: solid #034078  2px;
+    border-left: solid #034078 2px;
+    padding: 10px;
 }
