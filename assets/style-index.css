@@ -1,4 +1,11 @@
 main{
+    background-color: #f7f9fa;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+section.corpo-do-site{
     background-color: #fefcfb;
-    height: 80vh
+    width:90vw;
 }
