@@ -21,7 +21,6 @@ footer {
   height: 20vh;
   width: 100%;
   background-color: azure;
-
 }
 
 #corpo {
@@ -30,10 +29,8 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
   border: solid black 1px;
-
   padding-top: 10vh;
   min-height: calc(100vh - 10vh - 20vh);
-
   grid-template-areas: "news news side";
 }
 
@@ -48,11 +45,10 @@ footer {
 }
 
 .noticias {
-  border: solid black 1px;
   margin: 4px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(7, auto);
 }
 
 .subcorpoD {
@@ -77,27 +73,26 @@ footer {
 }
 
 .imagem-noticia {
-  border: solid black 1px;
   margin: 4px;
   grid-row: 1 / 8;
   grid-column: 1 / 3;
 }
 .texto-noticia {
-  border: solid black 1px;
   margin: 4px;
   grid-column: 3 / 6;
 }
 
-.texto-noticia {
-  border: solid black 1px;
-  margin: 4px;
-  grid-column: 3 / 6;
+.texto-noticia.titulo {
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: flex-end;
 }
-
-.texto-noticia.titulo    { grid-row: 1 / 3; }
-.texto-noticia.subtitulo { grid-row: 3 / 7; }
-
-
+.texto-noticia.subtitulo {
+  grid-row: 2 / 3;
+}
+.texto-noticia.corpo {
+  grid-row: 3 / 4;
+}
 
 @media (orientation: portrait), (max-width: 768px) {
   #corpo {
@@ -127,4 +122,10 @@ footer {
   }
 
   .noticias { min-height: 220px; }
+}
+.imagem-noticia img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
 }
