@@ -31,6 +31,7 @@ section{
 }
 .texto_headline_grande{
     font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
     text-align: left;
     width: 80%;
     color: white;
@@ -51,6 +52,7 @@ section{
 }
 .texto_headline_pequena1{
     text-align: left;
+    font-family: 'Roboto Condensed', sans-serif;
     width: 88%;
     color: white;
     padding-left: 3%;
@@ -70,6 +72,7 @@ section{
 }
 .texto_headline_pequena2{
     text-align: left;
+    font-family: 'Roboto Condensed', sans-serif;
     width: 88%;
     color: white;
     padding-left: 3%;
