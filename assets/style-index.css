@@ -8,4 +8,14 @@ main{
 section.corpo-do-site{
     background-color: #fefcfb;
     width:90vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
+
+/* Provisório até definir o grid */
+main section div{
+    background-color: rgb(216, 255, 242);
+    border:solid red;
+}
+
