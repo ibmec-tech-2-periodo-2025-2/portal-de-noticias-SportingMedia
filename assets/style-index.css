@@ -123,3 +123,61 @@ section.corpo-do-site{
     color: #0a1128;
     font-size: 20px
 }
+
+
+@media screen and (orientation: portrait), (max-width: 1050px){
+section.corpo-do-site{
+    background-color: #fefcfb;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    padding:10px;
+ }
+
+.imagem-menor{
+    height: 100px;
+    width: 180px;
+}
+
+.imagem-maior{
+    height: 100px;
+    width: 180px
+}
+
+.texto-maior{
+    width: 50%;
+}
+.texto-maior h1{
+    font-size: 15px;
+    overflow: hidden;
+}
+
+.texto-maior p{
+    font-size: 12px;
+    overflow: hidden;
+
+}
+
+.noticia-maior{
+    display: flex;
+    gap: 20px;
+}
+
+.texto-menor h2{
+    font-size: 15px;
+}
+
+.texto-menor p{
+    font-size: 12px;
+}
+
+.noticia-maior{
+    display: flex;
+    gap: 20px;
+    justify-content:flex-start;
+    align-items: flex-start;
+}
+
+
+}
