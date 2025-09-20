@@ -97,7 +97,7 @@ section.corpo-do-site{
     align-items: center;
 }
 
-.imagem-menor img{
+.imagem-maior img{
     height: 100%;
     width: 100%;
     object-fit: cover;
