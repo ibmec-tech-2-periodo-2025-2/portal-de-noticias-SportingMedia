@@ -12,7 +12,7 @@ section.corpo-do-site{
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(3,1fr);
     gap:20px;
-    padding:5px
+    padding:10px
 }
 
 /* Provisório até definir o grid */
