@@ -46,5 +46,22 @@ main section div{
 }
 
 .noticia-menor{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.imagem-menor{
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.titulo-menor{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.subtitulo-menor{
+    grid-column: 2/3;
+    grid-row: 2/3;
 }
