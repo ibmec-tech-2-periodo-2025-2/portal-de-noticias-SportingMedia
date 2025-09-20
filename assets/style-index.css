@@ -11,7 +11,8 @@ section.corpo-do-site{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(3,1fr);
-    gap:10px
+    gap:20px;
+    padding:5px
 }
 
 /* Provisório até definir o grid */
@@ -47,9 +48,35 @@ main section div{
 
 .noticia-menor{
     display: flex;
-    gap:10px;
-    height: 210px
+    gap:20px;
 }
-.imagem-menor img{
+
+.imagem-menor{
     height: 200px;
+    width: 360px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-menor img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.texto-menor{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 50%;
+}
+
+.texto-menor h2{
+    color: #001F54;
+}
+
+.texto-menor p{
+    color: #0a1128
 }
