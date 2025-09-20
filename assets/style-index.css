@@ -11,11 +11,12 @@ section.corpo-do-site{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(3,1fr);
+    gap:5px
 }
 
 /* Provisório até definir o grid */
 main section div{
-    background-color: rgb(216, 255, 242);
+    background-color: rgba(250, 193, 127, 0.463);
     border:solid red;
 }
 
@@ -42,4 +43,8 @@ main section div{
 .noticia-5{
     grid-column: 2/3;
     grid-row: 4/5;
+}
+
+.noticia-menor{
+    display: flex;
 }
