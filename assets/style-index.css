@@ -58,6 +58,8 @@ section.corpo-do-site{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    border: solid #0A1128 2px;
 }
 
 .imagem-menor img{
@@ -95,6 +97,8 @@ section.corpo-do-site{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    border: solid #0A1128 2px;
 }
 
 .imagem-maior img{
