@@ -1,6 +1,6 @@
 main{
     background-color: #f7f9fa;
-    height: 80vh;
+    /* height: 80vh; */
     display: flex;
     justify-content: center;
 }
@@ -11,7 +11,7 @@ section.corpo-do-site{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(3,1fr);
-    gap:5px
+    gap:10px
 }
 
 /* Provisório até definir o grid */
@@ -49,6 +49,7 @@ main section div{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
+    gap:10px
 }
 
 .imagem-menor{
@@ -64,4 +65,12 @@ main section div{
 .subtitulo-menor{
     grid-column: 2/3;
     grid-row: 2/3;
+}
+
+.imagem-menor{
+    display: flex;
+    justify-content: center;
+}
+.imagem-menor img{
+    height: 200px;
 }
