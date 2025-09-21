@@ -220,4 +220,69 @@ footer a {
     border-bottom: solid #f0f0f0 1px;
 }
 
- 
+ @media screen and (max-width: 768px) and (orientation: portrait) {
+    
+    body {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    header, footer {
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav a {
+        display: block;
+        margin: 5px 0;
+    }
+    
+     #corpo {
+        display: flex;
+        flex-direction: column;
+        width: 95%;  
+        height: auto;
+        padding: 10px 0; 
+        gap: 15px;
+    }
+    
+    .noticia-principal { order: 1; }
+    .noticia-lateral { order: 2; }
+    .noticia-secundaria { order: 3; }
+    .tabela { 
+        order: 4;
+        height: auto; 
+        min-height: 400px;
+    }
+
+     .grid-pequeno,
+    .noticia-secundaria,
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .noticia-secundaria {
+        display: flex;
+        flex-direction: column;
+    }
+
+     h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    h4 { font-size: 1em; }
+    
+    p, .card p, .card-medio p, .noticia-lateral p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    .btn-container button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
