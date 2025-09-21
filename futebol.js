@@ -27,46 +27,46 @@ const logoMap = {
   "Flamengo":        "Flamengo.png",
   "Cruzeiro":        "Cruzeiro.png",
   "Palmeiras":       "Palmeiras.png",
-  "Mirassol":        "Mirassol-SP.png",        // nome do arquivo tem sufixo -SP
+  "Mirassol":        "Mirassol-SP.png",
   "Bahia":           "Bahia.png",
   "Botafogo":        "Botafogo.png",
-  "São Paulo":       "SãoPaulo.png",           // espaço removido no arquivo
-  "Bragantino":      "RedBullBragantino.png",  // nome completo do RB Bragantino
+  "São Paulo":       "SãoPaulo.png",
+  "Bragantino":      "RedBullBragantino.png",
   "Corinthians":     "Corinthians.png",
   "Fluminense":      "Fluminense.png",
-  "Ceará SC":        "Ceará.png",              // equipe no dado vem como "Ceará SC"
+  "Ceará SC":        "Ceará.png",
   "Internacional":   "Internacional.png",
-  "Atlético-MG":     "AtléticoMineiro.png",    // arquivo usa o nome completo do clube
+  "Atlético-MG":     "AtléticoMineiro.png",
   "Grêmio":          "Grêmio.png",
-  "Vasco da Gama":   "VascodaGama.png",        // sem espaços e com letra minúscula no "da"
+  "Vasco da Gama":   "VascodaGama.png",
   "Santos":          "Santos.png",
-  "EC Vitória":      "Vitória.png",            // arquivo não tem o prefixo "EC"
+  "EC Vitória":      "Vitória.png",
   "Juventude":       "Juventude.png",
   "Fortaleza":       "Fortaleza.png",
-  "Sport Recife":    "SportRecife.png"         // sem espaço no nome do arquivo
+  "Sport Recife":    "SportRecife.png"
 };
 
-/* Retorna a URL do escudo já com encoding correto para acentos/espaços */
-const logoSrc = (team) => encodeURI(logoMap[team] || ''); // se não houver mapeamento, retorna string vazia
+const logoSrc = (team) => encodeURI(logoMap[team] || "");
 
 /* ============== Referências aos elementos da tabela no DOM ============== */
-const brTitle = document.getElementById('br-title');      // <h2> do título "Brasileirão Série A"
-const brTbody = document.getElementById('br-standings');  // <tbody> onde as linhas serão injetadas
+const brTitle = document.getElementById("br-title");
+const brTbody = document.getElementById("br-standings");
 
 /* ============== Renderiza a tabela do Brasileirão com os dados acima ============== */
 function renderBR() {
-  brTitle.textContent = "Brasileirão Série A"; // garante o texto do título (idempotente)
-  // Gera as linhas da tabela com base em brData; i+1 é a posição (1-based)
-  brTbody.innerHTML = brData.map((t, i) => `
+  brTitle.textContent = "Brasileirão Série A";
+  brTbody.innerHTML = brData
+    .map(
+      (t, i) => `
     <tr>
       <td>${i + 1}</td>
       <td>
         <img 
-          src="${logoSrc(t.team)}"         /* caminho do escudo, já codificado */
-          width="26" height="26"           /* tamanho consistente para todos os escudos */
-          alt="${t.team} logo"             /* acessibilidade: descrição da imagem */
-          loading="lazy"                   /* adia o carregamento para melhorar performance */
-          onerror="this.style.display='none'" /* se a imagem não existir, esconde o <img> */
+          src="${logoSrc(t.team)}"
+          width="26" height="26"
+          alt="${t.team} logo"
+          loading="lazy"
+          onerror="this.style.display='none'"
         >
       </td>
       <td>${t.team}</td>
@@ -77,40 +77,37 @@ function renderBR() {
       <td>${t.d}</td>
       <td>${t.sg}</td>
     </tr>
-  `).join(""); // junta o array de strings em um único HTML sem vírgulas
+  `
+    )
+    .join("");
 }
 
 /* === Sincroniza a barra de rolagem do topo com a tabela === */
 function initTopScrollbarSync() {
-  const wrap = document.querySelector('.tabelas1 .table-wrap');   // container rolável da tabela
-  const top  = document.querySelector('.tabelas1 .scrollbar-top'); // “barra” falsa no topo
-  if (!wrap || !top) return; // segurança: sai se algum elemento não existir
+  const wrap = document.querySelector(".tabelas1 .table-wrap");
+  const top  = document.querySelector(".tabelas1 .scrollbar-top");
+  if (!wrap || !top) return;
 
-  const spacer = top.querySelector('.scrollbar-spacer'); // elemento que define a largura da barra falsa
+  const spacer = top.querySelector(".scrollbar-spacer");
 
   const syncWidths = () => {
-    // Usa a largura total rolável do conteúdo da tabela para igualar a “barra” superior
-    spacer.style.width = wrap.scrollWidth + 'px';
+    spacer.style.width = wrap.scrollWidth + "px";
   };
 
-  // Mantém a posição de scroll horizontal sincronizada entre o topo e a tabela
-  top.addEventListener('scroll',  () => { wrap.scrollLeft = top.scrollLeft;  });
-  wrap.addEventListener('scroll', () => { top.scrollLeft  = wrap.scrollLeft; });
+  top.addEventListener("scroll",  () => { wrap.scrollLeft = top.scrollLeft;  });
+  wrap.addEventListener("scroll", () => { top.scrollLeft  = wrap.scrollLeft; });
 
-  // Ajusta a largura da barra ao carregar e quando a janela é redimensionada
   syncWidths();
-  window.addEventListener('resize', syncWidths);
+  window.addEventListener("resize", syncWidths);
 
-  // Observa mudanças no tamanho interno de wrap (ex.: imagens carregando alteram largura)
   if (window.ResizeObserver) {
-    const ro = new ResizeObserver(syncWidths); // chama syncWidths sempre que o tamanho muda
+    const ro = new ResizeObserver(syncWidths);
     ro.observe(wrap);
   }
 
-  // Delay curto para esperar carregamento de imagens que impactam o scrollWidth
   setTimeout(syncWidths, 100);
 }
 
 /* ===================== Chamada inicial (bootstrap) ===================== */
-renderBR();            // popula a tabela no carregamento
-initTopScrollbarSync(); // ativa a sincronização da barra superior
+renderBR();
+initTopScrollbarSync();
