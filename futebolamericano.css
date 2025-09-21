@@ -267,7 +267,7 @@ body{
     grid-row: 5/10;
     border: 3px solid black;
     margin: 10px;
-    background-color: #ebebff;
+    background-color: #e2e2e2;
 }
 
 .titulo-jogos{
@@ -278,7 +278,7 @@ body{
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
-    background-color: #d4d4ff;
+    background-color: #b7b7b7;
     border-bottom: 2px solid black;
     padding: 10px;
 }
