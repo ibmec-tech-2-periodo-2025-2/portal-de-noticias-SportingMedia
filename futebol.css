@@ -1,4 +1,4 @@
-/* ========================= Reset / Base ========================= */ 
+/* ========================= Reset / Base ========================= */  
 * {
   margin: 0;
   border: 0;
@@ -29,26 +29,25 @@ footer {
   width: 100%;
   background-color: azure;
   border-top: 1px solid #000;
-  display: flex; align-items: center;  /* opcional: centraliza verticalmente o texto */
+  display: flex; align-items: center;
 }
 
 /* ========================= Container central ========================= */
 .container {
-  max-width: 1000px;        /* largura máxima do conteúdo */
-  margin: 0 auto;           /* centraliza e cria margens laterais */
-  padding: 0 10px;          /* espaço interno */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
   width: 100%;
 }
 
 /* ========================= Layout principal ========================= */
-/* Faz o main (#corpo) ocupar o espaço flexível, empurrando o footer para baixo */
 #corpo {
   display: grid;
   grid-template-columns: 2fr 1fr;          /* notícias maiores, tabela menor */
   grid-template-areas: "news side";
   padding-top: 10vh;                        /* espaço do header fixo */
   gap: 10px;
-  flex: 1 0 auto;                           /* cresce conforme o conteúdo */
+  flex: 1 0 auto;
 }
 
 .subcorpoE {
@@ -62,17 +61,17 @@ footer {
 .noticias {
   margin: 4px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);    /* img nas colunas 1-2, textos 3-5 */
+  grid-template-columns: repeat(5, 1fr);    /* img 1-2, textos 3-5 */
   grid-template-rows: repeat(7, auto);
-  row-gap: 3px;                             /* menor espaçamento vertical */
+  row-gap: 3px;
 }
 
 .subcorpoD {
   grid-area: side;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto;            /* altura acompanha conteúdo */
-  align-content: start;                     /* evita alongar ao tamanho da coluna */
+  grid-template-rows: auto auto;
+  align-content: start;
   margin-top: 35px;
 }
 
@@ -85,18 +84,18 @@ footer {
 .tabelas1{
   margin: 4px;
   position: relative;
-  font-size: 0.75rem;                       /* fonte menor */
+  font-size: 0.75rem;
 }
 
 /* barra superior que exibe só a scrollbar */
 .tabelas1 .scrollbar-top{
-  overflow-x: scroll;         /* força a barra a aparecer */
+  overflow-x: scroll;
   overflow-y: hidden;
-  height: 16px;               /* um tiquinho mais alta para ficar perceptível */
+  height: 16px;
   margin-bottom: 4px;
 }
 .tabelas1 .scrollbar-top .scrollbar-spacer{
-  height: 1px;             /* praticamente invisível, só para dar largura */
+  height: 1px;
 }
 
 /* wrapper real que rola a tabela */
@@ -110,12 +109,12 @@ footer {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  min-width: 400px;                          /* largura mínima menor */
+  min-width: 400px;
 }
 .tabelas1 th,
 .tabelas1 td {
   border: 1px solid #000;
-  padding: 4px 6px;                          /* menos espaçamento interno */
+  padding: 4px 6px;
   text-align: center;
   line-height: 1.2;
 }
@@ -127,7 +126,7 @@ footer {
 .tabelas1 td img {
   display: block;
   margin: 0 auto;
-  width: 20px;                               /* logos menores */
+  width: 20px;
   height: 20px;
 }
 /* coluna Clube mais larga */
@@ -173,7 +172,7 @@ footer {
   grid-column: 1 / 3;
   position: relative;
   overflow: hidden;
-  height: 135px;                            /* altura compacta no desktop */
+  height: 135px;
 }
 .imagem-noticia img {
   width: 100%;
@@ -188,7 +187,7 @@ footer {
 
 /* ========================= Textos das notícias ========================= */
 .texto-noticia {
-  margin: 2px 4px;                          /* margens enxutas */
+  margin: 2px 4px;
   grid-column: 3 / 6;
 }
 .texto-noticia.titulo {
@@ -209,7 +208,85 @@ footer {
   line-height: 1.1;
 }
 
-/* ========================= Responsivo (corrige mobile) ========================= */
+/* ========================= TABELA 2 – PLACARES (layout/tamanho/posição) ========================= */
+.placares-card{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;               /* distância entre jogos */
+  padding: 8px;
+}
+
+.bloco-jogo{
+  display: grid;
+  grid-template-rows: auto auto auto; /* topo / linha-times / cta */
+  row-gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #000;
+}
+
+/* Cabeçalho: liga à esquerda, horário à direita */
+.topo-jogo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 28px;
+}
+.topo-jogo .liga{ font-size: 0.9rem; }
+.topo-jogo .quando{
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Linha do confronto */
+.linha-times{
+  display: flex;                 /* <<< trocado grid por flex */
+  align-items: center;
+  justify-content: center;       /* centraliza tudo */
+  gap: 30px;                     /* controla espaço lateral */
+  min-height: 44px;
+}
+
+/* Times */
+.time{
+  display: flex;
+  align-items: center;
+  gap: 4px;                      /* sigla mais próxima do escudo */
+}
+.time.home{ justify-content: flex-end; }
+.time.away{ justify-content: flex-start; }
+
+/* Siglas */
+.sigla{
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Escudos */
+.escudo{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;  /* mantém proporção sem cortar */
+  display: block;
+}
+
+/* Placar central */
+.placar{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+}
+.placar .gols{
+  font-size: 28px;
+  line-height: 1;
+}
+.placar .xis{
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ========================= Responsivo ========================= */
 @media (max-width: 768px) {
   #corpo {
     grid-template-columns: 1fr;
@@ -218,19 +295,18 @@ footer {
       "side";
   }
 
-  /* Card em 1 coluna (imagem em cima, textos abaixo) */
   .noticias{
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     row-gap: 6px;
   }
   .noticias > *{
-    grid-column: 1 / -1 !important;          /* ocupa toda a largura */
-    grid-row: auto !important;                /* remove travas de linha */
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
   }
 
   .imagem-noticia{
-    height: 150px;                            /* imagem estável no mobile */
+    height: 150px;
     margin: 4px 4px 0;
   }
 
@@ -248,9 +324,22 @@ footer {
     grid-template-rows: auto auto;
     align-content: start;
   }
+
+  .placares-card{ gap: 12px; }
+  .linha-times{ gap: 8px; }
+  .time{ gap: 3px; }
+  .escudo{ width: 34px; height: 34px; }
+  .placar{ gap: 5px; }
+  .placar .gols{ font-size: 26px; }
+  .placar .xis{ font-size: 20px; }
 }
 
 @media (max-width: 380px) {
   .imagem-noticia { height: 130px; }
   .texto-noticia.subtitulo h1 { font-size: 1.1rem; }
+
+  .escudo{ width: 30px; height: 30px; }
+  .placar{ gap: 4px; }
+  .placar .gols{ font-size: 22px; }
+  .placar .xis{ font-size: 18px; }
 }
