@@ -5,11 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página com informações de futebol americano</title>
     <link rel="stylesheet" href="futebolamericano.css">
+    <script src="futebolamericano.js"></script>
 </head>
 <body>
     <div class="header">HEADER</div>
     <div class="corpo">
-        <div class="tabela">TABELA</div>
+        <div class="tabela">
+            <div class="botoes-conferencia">
+                <button class="btn-conferencia" id="btn-nfc">NFC</button>
+                <button class="btn-conferencia" id="btn-afc">AFC</button>
+            </div>
+            
+            <div class="grid-divisoes" id="nfc-grid">
+                <div class="divisao" id="nfc-east">
+                    <h3>NFC EAST</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">Philadelphia Eagles</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Washington Commanders</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Dallas Cowboys</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">New York Giants</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divisao" id="nfc-west">
+                    <h3>NFC WEST</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">San Francisco 49ers</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Arizona Cardinals</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Los Angeles Rams</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Seattle Seahawks</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divisao" id="nfc-north">
+                    <h3>NFC NORTH</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">Green Bay Packers</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Minnesota Vikings</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Detroit Lions</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Chicago Bears</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divisao" id="nfc-south">
+                    <h3>NFC SOUTH</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">Tampa Bay Buccaneers</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Atlanta Falcons</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Carolina Panthers</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">New Orleans Saints</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-divisoes" id="afc-grid" style="display: none;">
+                <div class="divisao" id="afc-east">
+                    <h3>AFC EAST</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">Buffalo Bills</span>
+                            <span class="record-time"><strong>W 3</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">New England Patriots</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">New York Jets</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Miami Dolphins</span>
+                            <span class="record-time"><strong>W 0</strong> - 3 L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divisao" id="afc-west">
+                    <h3>AFC WEST</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">Los Angeles Chargers</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Denver Broncos</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Las Vegas Raiders</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Kansas City Chiefs</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divisao" id="afc-north">
+                    <h3>AFC NORTH</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">Cincinnati Bengals</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Baltimore Ravens</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Pittsburgh Steelers</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Cleveland Browns</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divisao" id="afc-south">
+                    <h3>AFC SOUTH</h3>
+                    <div class="times-divisao">
+                        <div class="time-item">
+                            <span class="nome-time">Indianapolis Colts</span>
+                            <span class="record-time"><strong>W 2</strong> - 0 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Jacksonville Jaguars</span>
+                            <span class="record-time"><strong>W 1</strong> - 1 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Houston Texans</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="nome-time">Tennessee Titans</span>
+                            <span class="record-time"><strong>W 0</strong> - 2 L</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="noticia1">
             <img src="foto_noticia_1.jpg" alt="Notícia 1 - Futebol Americano">
