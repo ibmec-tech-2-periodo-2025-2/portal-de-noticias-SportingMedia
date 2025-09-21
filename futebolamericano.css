@@ -513,3 +513,146 @@ div{
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    
+    body{
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .header{
+        height: 15vh;
+        font-size: 150%;
+    }
+    
+    .corpo{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .tabela{
+        width: 100%;
+        order: 1;
+        margin: 0;
+        padding: 10px;
+        height: auto;
+        min-height: 400px;
+    }
+    
+    .botoes-conferencia{
+        margin-bottom: 15px;
+    }
+    
+    .btn-conferencia{
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    
+    .grid-divisoes{
+        gap: 8px;
+    }
+    
+    .divisao{
+        padding: 8px;
+    }
+    
+    .divisao h3{
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+    
+    .time-item{
+        padding: 5px;
+        font-size: 0.75em;
+    }
+    
+    .nome-time{
+        font-size: 0.85em;
+    }
+    
+    .record-time{
+        font-size: 0.7em;
+    }
+    
+    .jogosSemana{
+        width: 100%;
+        order: 2;
+        height: auto;
+        min-height: 300px;
+        margin: 0;
+    }
+    
+    .titulo-jogos{
+        font-size: 1em;
+        padding: 8px;
+    }
+    
+    .jogo-item{
+        font-size: 0.7em;
+        padding: 4px;
+    }
+    
+    .jogo-hora{
+        font-size: 0.65em;
+    }
+    
+    .noticia1, .noticia2, .noticia3, .noticia5, .noticia6{
+        width: 100%;
+        height: 200px;
+        margin: 0 0 10px 0;
+        order: 3;
+    }
+    
+    .noticia4{
+        width: 100%;
+        height: 120px;
+        margin: 0 0 10px 0;
+        order: 3;
+        grid-template-columns: 1fr 2fr;
+    }
+    
+    .texto-N1, .texto-N2, .texto-N3, .texto-N4, .texto-N5, .texto-N6{
+        width: 100%;
+        padding: 10px;
+        margin: 0 0 10px 0;
+        order: 3;
+    }
+    
+    .texto-N1 h2, .texto-N2 h2, .texto-N3 h2, .texto-N4 h2, .texto-N5 h2, .texto-N6 h2{
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+    
+    .texto-N1 p, .texto-N2 p, .texto-N4 p, .texto-N5 p, .texto-N6 p{
+        font-size: 0.8em;
+        line-height: 1.3;
+    }
+    
+    .subnoticia1, .subnoticia2{
+        width: 100%;
+        height: 80px;
+        margin: 0 0 10px 0;
+        order: 3;
+        grid-template-columns: 1fr 2fr;
+    }
+    
+    .texto-SN1, .texto-SN2{
+        padding: 5px;
+    }
+    
+    .texto-SN1 p, .texto-SN2 p{
+        font-size: 0.7em;
+        line-height: 1.2;
+    }
+    
+    .footer{
+        height: 15vh;
+        font-size: 120%;
+        order: 4;
+    }
+}
