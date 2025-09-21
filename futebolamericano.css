@@ -8,6 +8,10 @@ body{
     height: 1300px;
 }
 
+div{
+    border-radius: 5px;
+}
+
 .header{
     width: 100vw;
     height: 20vh;
