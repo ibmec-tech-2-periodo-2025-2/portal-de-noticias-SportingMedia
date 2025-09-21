@@ -47,10 +47,10 @@ const logoMap = {
 
 const logoSrc = (team) => encodeURI(logoMap[team] || '');
 
-const brTitle = document.getElementById('br-title');
-const brTbody = document.getElementById('br-standings');
+const brTitle  = document.getElementById('br-title');
+const brTbody  = document.getElementById('br-standings');
 
-const renderBR = () => {
+function renderBR() {
   brTitle.textContent = "Brasileirão Série A";
   brTbody.innerHTML = brData.map((t, i) => `
     <tr>
@@ -73,6 +73,39 @@ const renderBR = () => {
       <td>${t.sg}</td>
     </tr>
   `).join("");
-};
+}
 
+/* === Sincroniza a barra de rolagem do topo com a tabela === */
+function initTopScrollbarSync() {
+  const wrap  = document.querySelector('.tabelas1 .table-wrap');
+  const top   = document.querySelector('.tabelas1 .scrollbar-top');
+  if (!wrap || !top) return;
+
+  const spacer = top.querySelector('.scrollbar-spacer');
+
+  const syncWidths = () => {
+    // Usa a largura total rolável do conteúdo da tabela
+    spacer.style.width = wrap.scrollWidth + 'px';
+  };
+
+  // sincroniza scroll
+  top.addEventListener('scroll', () => { wrap.scrollLeft = top.scrollLeft; });
+  wrap.addEventListener('scroll', () => { top.scrollLeft = wrap.scrollLeft; });
+
+  // atualiza larguras on-load e on-resize
+  syncWidths();
+  window.addEventListener('resize', syncWidths);
+
+  // observa mudanças no tamanho do conteúdo
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(syncWidths);
+    ro.observe(wrap);
+  }
+
+  // pequena espera para imagens carregarem e afetarem o tamanho da tabela
+  setTimeout(syncWidths, 100);
+}
+
+// Render e inicialização
 renderBR();
+initTopScrollbarSync();

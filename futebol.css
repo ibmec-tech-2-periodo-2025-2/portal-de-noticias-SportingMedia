@@ -1,10 +1,16 @@
-/* ========================= Reset / Base ========================= */
+/* ========================= Reset / Base ========================= */ 
 * {
   margin: 0;
   border: 0;
   box-sizing: border-box;
 }
-html, body { height: 100%; }
+html, body { min-height: 100%; }
+
+/* Corpo flex para empurrar o footer para o fim do conteúdo */
+body {
+  display: flex;
+  flex-direction: column;
+}
 
 /* ========================= Header / Footer ========================= */
 header {
@@ -17,59 +23,145 @@ header {
   z-index: 10;
   border: 1px solid #000;
 }
+
 footer {
-  height: 20vh;
+  height: 30px;      /* altura solicitada */
   width: 100%;
   background-color: azure;
+  border-top: 1px solid #000;
+  display: flex; align-items: center;  /* opcional: centraliza verticalmente o texto */
+}
+
+/* ========================= Container central ========================= */
+.container {
+  max-width: 1000px;        /* largura máxima do conteúdo */
+  margin: 0 auto;           /* centraliza e cria margens laterais */
+  padding: 0 10px;          /* espaço interno */
+  width: 100%;
 }
 
 /* ========================= Layout principal ========================= */
+/* Faz o main (#corpo) ocupar o espaço flexível, empurrando o footer para baixo */
 #corpo {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-areas: "news news side";
-  padding-top: 10vh;
-  min-height: calc(100vh - 10vh - 20vh);
-  border: 1px solid #000;
+  grid-template-columns: 2fr 1fr;          /* notícias maiores, tabela menor */
+  grid-template-areas: "news side";
+  padding-top: 10vh;                        /* espaço do header fixo */
+  gap: 10px;
+  flex: 1 0 auto;                           /* cresce conforme o conteúdo */
 }
 
 .subcorpoE {
-  grid-row: 1 / 1;
-  grid-column: 1 / 3;
   grid-area: news;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  border: 1px solid #000;
+  grid-template-rows: repeat(4, auto);
+  margin-top: 35px;
 }
 
 .noticias {
   margin: 4px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);    /* img nas colunas 1-2, textos 3-5 */
   grid-template-rows: repeat(7, auto);
+  row-gap: 3px;                             /* menor espaçamento vertical */
 }
 
 .subcorpoD {
-  grid-row: 1 / 1;
-  grid-column: 3 / 4;
   grid-area: side;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  border: 1px solid #000;
+  grid-template-rows: auto auto;            /* altura acompanha conteúdo */
+  align-content: start;                     /* evita alongar ao tamanho da coluna */
+  margin-top: 35px;
 }
 
-.tabelas1 {
-  grid-row: 1 / 4;
+/* ========================= Tabela (com barra de rolagem no topo) ========================= */
+#br-title{
+  text-align: center; 
+  margin: 6px 0 8px;
+}
+
+.tabelas1{
   margin: 4px;
+  position: relative;
+  font-size: 0.75rem;                       /* fonte menor */
+}
+
+/* barra superior que exibe só a scrollbar */
+.tabelas1 .scrollbar-top{
+  overflow-x: scroll;         /* força a barra a aparecer */
+  overflow-y: hidden;
+  height: 16px;               /* um tiquinho mais alta para ficar perceptível */
+  margin-bottom: 4px;
+}
+.tabelas1 .scrollbar-top .scrollbar-spacer{
+  height: 1px;             /* praticamente invisível, só para dar largura */
+}
+
+/* wrapper real que rola a tabela */
+.tabelas1 .table-wrap{
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabelas1 table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 400px;                          /* largura mínima menor */
+}
+.tabelas1 th,
+.tabelas1 td {
   border: 1px solid #000;
+  padding: 4px 6px;                          /* menos espaçamento interno */
+  text-align: center;
+  line-height: 1.2;
+}
+.tabelas1 th {
+  background: #f4f4f4;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.tabelas1 td img {
+  display: block;
+  margin: 0 auto;
+  width: 20px;                               /* logos menores */
+  height: 20px;
+}
+/* coluna Clube mais larga */
+.tabelas1 td:nth-child(3),
+.tabelas1 th:nth-child(3) {
+  width: 70px;
+  text-align: left;
+  padding-left: 6px;
+}
+/* colunas numéricas mais estreitas */
+.tabelas1 td:nth-child(1),
+.tabelas1 th:nth-child(1),
+.tabelas1 td:nth-child(4),
+.tabelas1 th:nth-child(4),
+.tabelas1 td:nth-child(5),
+.tabelas1 th:nth-child(5),
+.tabelas1 td:nth-child(6),
+.tabelas1 th:nth-child(6),
+.tabelas1 td:nth-child(7),
+.tabelas1 th:nth-child(7),
+.tabelas1 td:nth-child(8),
+.tabelas1 th:nth-child(8),
+.tabelas1 td:nth-child(9),
+.tabelas1 th:nth-child(9) {
+  width: 30px;
+  text-align: center;
+}
+/* largura para a coluna de Logo */
+.tabelas1 td:nth-child(2),
+.tabelas1 th:nth-child(2) {
+  width: 38px;
 }
 
 .tabelas2 {
-  grid-row: 4 / 6;
   margin: 4px;
   border: 1px solid #000;
 }
@@ -79,136 +171,86 @@ footer {
   margin: 4px;
   grid-row: 1 / 8;
   grid-column: 1 / 3;
-  position: relative;   /* viewport da imagem e corte interno */
+  position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 135px;                            /* altura compacta no desktop */
 }
-
 .imagem-noticia img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 50% 50%; /* posição padrão (centro) */
+  object-position: 50% 50%;
 }
-
-/* Mostra a parte de baixo (imagem “sobe” no recorte) */
-.imagem-noticia img.pan-up {
-  object-position: 50% 100%;
-}
-
-/* Mostra a parte de cima (imagem “desce” no recorte) */
-.imagem-noticia img.pan-down {
-  object-position: 40% 0%;
-}
-
-/* Ajuste especial para a imagem do Novorizontino */
-#img4 img {
-  object-position: 10% 27%; /* move o foco mais para o topo */
-}
+.imagem-noticia img.pan-up   { object-position: 50% 100%; }
+.imagem-noticia img.pan-down { object-position: 40% 0%; }
+#img4 img { object-position: 10% 27%; }
 
 /* ========================= Textos das notícias ========================= */
 .texto-noticia {
-  margin: 4px;
+  margin: 2px 4px;                          /* margens enxutas */
   grid-column: 3 / 6;
 }
-
 .texto-noticia.titulo {
   grid-row: 1 / 2;
   display: flex;
   align-items: flex-end;
+  font-size: 0.82rem;
+  line-height: 1;
 }
-
 .texto-noticia.subtitulo { grid-row: 2 / 3; }
-.texto-noticia.corpo     { grid-row: 3 / 4; }
-
-/* ========================= Tabela ========================= */
-.tabelas1 table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+.texto-noticia.subtitulo h1 {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.texto-noticia.corpo {
+  grid-row: 3 / 4;
+  font-size: 0.78rem;
+  line-height: 1.1;
 }
 
-.tabelas1 th,
-.tabelas1 td {
-  border: 1px solid #000;
-  padding: 6px;
-  text-align: center;
-}
-
-.tabelas1 th {
-  background: #f4f4f4;
-  font-weight: bold;
-}
-
-.tabelas1 td img {
-  display: block;
-  margin: 0 auto;
-  width: 26px;
-  height: 26px;
-}
-
-/* coluna Clube mais larga */
-.tabelas1 td:nth-child(3),
-.tabelas1 th:nth-child(3) {
-  width: 122px;
-  text-align: left;
-}
-
-/* colunas numéricas mais estreitas */
-.tabelas1 td:nth-child(1),  /* Pos */
-.tabelas1 th:nth-child(1),
-.tabelas1 td:nth-child(4),  /* Pts */
-.tabelas1 th:nth-child(4),
-.tabelas1 td:nth-child(5),  /* PJ */
-.tabelas1 th:nth-child(5),
-.tabelas1 td:nth-child(6),  /* VIT */
-.tabelas1 th:nth-child(6),
-.tabelas1 td:nth-child(7),  /* E */
-.tabelas1 th:nth-child(7),
-.tabelas1 td:nth-child(8),  /* DER */
-.tabelas1 th:nth-child(8),
-.tabelas1 td:nth-child(9),  /* SG */
-.tabelas1 th:nth-child(9) {
-  width: 42px;
-  text-align: center;
-}
-
-/* largura para a coluna de Logo */
-.tabelas1 td:nth-child(2),
-.tabelas1 th:nth-child(2) {
-  width: 48px;
-}
-
-/* ========================= Responsivo ========================= */
-@media (orientation: portrait), (max-width: 768px) {
+/* ========================= Responsivo (corrige mobile) ========================= */
+@media (max-width: 768px) {
   #corpo {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
     grid-template-areas:
       "news"
       "side";
-    min-height: calc(100vh - 10vh - 20vh);
   }
 
-  .subcorpoE,
-  .subcorpoD {
-    grid-column: 1 / -1;
-    width: 100%;
+  /* Card em 1 coluna (imagem em cima, textos abaixo) */
+  .noticias{
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    row-gap: 6px;
+  }
+  .noticias > *{
+    grid-column: 1 / -1 !important;          /* ocupa toda a largura */
+    grid-row: auto !important;                /* remove travas de linha */
   }
 
-  .subcorpoD {
-    margin-top: 8px;
-    grid-template-rows:
-      minmax(280px, auto)
-      minmax(240px, auto);
+  .imagem-noticia{
+    height: 150px;                            /* imagem estável no mobile */
+    margin: 4px 4px 0;
   }
 
-  .tabelas1,
-  .tabelas2 {
-    grid-row: auto;
-    min-height: 240px;
+  .texto-noticia{ margin: 2px 6px; }
+  .texto-noticia.subtitulo h1{
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .texto-noticia.corpo{
+    font-size: .9rem;
+    line-height: 1.3;
   }
 
-  .noticias { min-height: 220px; }
+  .subcorpoD{
+    grid-template-rows: auto auto;
+    align-content: start;
+  }
+}
+
+@media (max-width: 380px) {
+  .imagem-noticia { height: 130px; }
+  .texto-noticia.subtitulo h1 { font-size: 1.1rem; }
 }
