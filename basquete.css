@@ -39,11 +39,10 @@ footer a {
 
 #corpo {
     margin: 20px auto;
-    min-height: 20vh;
-     width: 90vw;
+    width: 90vw;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: auto auto;
     gap: 20px;
 }
 
@@ -57,7 +56,7 @@ footer a {
 
 .destaque img {
     width: 100%;
-    height: 40%;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -84,7 +83,7 @@ footer a {
 
 .card img {
     width: 100%;
-    height: 70%;
+    height: 120px;
     object-fit: cover;
 }
 
@@ -109,12 +108,11 @@ footer a {
 .card-medio {
     background-color: white;
     border: solid #ddd 1px;
-    max-height: 75%;
 }
 
 .card-medio img {
     width: 100%;
-    height: 40%;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -127,12 +125,11 @@ footer a {
     padding: 0 10px 10px 10px;
     color: #666;
     font-size: 14px;
-    
 }
 
 .noticia-lateral {
     grid-column: 9/13;
-    grid-row: 1/2;
+    grid-row: 1;
     background-color: white;
     border: solid #ddd 1px;
     padding: 10px;
@@ -140,7 +137,7 @@ footer a {
 
 .noticia-lateral img {
     width: 100%;
-    height: 60%;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -174,15 +171,13 @@ footer a {
     font-size: 24px;
 }
 
-
-
 .tabela {
     grid-column: 9/13;
     grid-row: 2;
     background-color: white;
     border: solid #ddd 1px;
     padding: 15px;
-    height: 400px; /* Fixed height instead of percentage */
+    max-height: 500px;
     overflow-y: auto;
 }
 
@@ -222,7 +217,7 @@ footer a {
     border-bottom: solid #f0f0f0 1px;
 }
 
- @media screen and (max-width: 768px) and (orientation: portrait) {
+@media screen and (max-width: 768px) and (orientation: portrait) {
     
     body {
         height: auto;
@@ -259,7 +254,7 @@ footer a {
     .tabela { 
         order: 4;
         height: auto; 
-        min-height: 400px;
+        min-height: 500px;
     }
 
      .grid-pequeno,
@@ -273,7 +268,7 @@ footer a {
         flex-direction: column;
     }
 
-     h2 { font-size: 1.3em; }
+    h2 { font-size: 1.3em; }
     h3 { font-size: 1.1em; }
     h4 { font-size: 1em; }
     
@@ -281,10 +276,14 @@ footer a {
         font-size: 0.9em;
         line-height: 1.4;
     }
+.card-medio img, .noticia-lateral img {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+}
 
     .btn-container button {
         padding: 10px 20px;
         font-size: 0.9em;
     }
 }
-
