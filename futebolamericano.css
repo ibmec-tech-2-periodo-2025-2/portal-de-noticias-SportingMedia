@@ -130,12 +130,25 @@ body{
     width: 95%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-rows: auto repeat(16, 1fr);
     grid-column: 1/2;
     grid-row: 5/10;
     border: 3px solid black;
     margin: 10px;
     background-color: #ebebff;
+}
+
+.titulo-jogos{
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    background-color: #d4d4ff;
+    border-bottom: 2px solid black;
+    padding: 10px;
 }
 
 .jogo-item{
