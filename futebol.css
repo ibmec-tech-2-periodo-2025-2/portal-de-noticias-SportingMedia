@@ -12,26 +12,6 @@ body {
   flex-direction: column;        /* header > main > footer empilhados verticalmente */
 }
 
-/* ========================= Header / Footer ========================= */
-header {
-  position: fixed;               /* fixa o header no topo da janela */
-  top: 0;                        /* alinha ao topo */
-  left: 0;                       /* alinha à esquerda */
-  height: 10vh;                  /* altura proporcional à viewport (10%) */
-  width: 100%;                   /* ocupa toda a largura */
-  background-color: azure;       /* cor de fundo do header */
-  z-index: 10;                   /* mantém o header acima do conteúdo */
-  border: 1px solid #000;        /* borda visível para referência */
-}
-
-footer {
-  height: 30px;                  /* altura solicitada */
-  width: 100%;                   /* ocupa toda a largura */
-  background-color: azure;       /* cor de fundo do footer */
-  border-top: 1px solid #000;    /* separador visual do conteúdo */
-  display: flex; align-items: center; /* centraliza verticalmente o texto do footer */
-}
-
 /* ========================= Container central ========================= */
 .container {
   max-width: 1000px;             /* limita largura máxima do conteúdo central */

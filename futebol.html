@@ -4,10 +4,29 @@
   <meta charset="UTF-8" /> <!-- Codificação para acentuação correta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsividade em dispositivos móveis -->
   <title>Futebol</title> <!-- Título exibido na aba do navegador -->
+  <link rel="stylesheet" href="./assets/style-global.css">
   <link rel="stylesheet" href="futebol.css" /> <!-- Importa o CSS externo do projeto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>HEADER</header> <!-- Cabeçalho fixo/identidade do site -->
+  <header>
+    <section class="cabecalho">
+        <img src="./img/Logo-portal-noticia.png" alt="Logo-portal-noticias" class="logo">
+        <h1>Sporting Media</h1>
+        <a href="./main.html"><img src="./img/icon-casa.png" alt="ícone de casa" class="menu"></a>
+    </section>
+
+    <section class="menu-selecao">
+        <div><a href="./futebol.html">Futebol</a></div>
+        <div><a href="./futebolamericano.html">Futebol Americano</a></div>
+        <div><a href="./UFC.html">UFC</a></div>
+        <div><a href="./basquete.html">Basquete</a></div>
+        <div>Fórmula 1</div>
+    </section>
+
+  </header>
 
   <!-- Container central -->
   <div class="container"> <!-- Wrapper que limita largura e centraliza o conteúdo -->
@@ -227,7 +246,21 @@
     </main>
   </div>
 
-  <footer>FOOTER</footer> <!-- Rodapé da página -->
+  <footer>
+    <div class="primeira-parte-footer">
+        <img src="./img/Logo-portal-noticia.png" alt="Logo-portal-noticias">
+        <h1>Sporting Media</h1>
+    </div>
+    <div class="descricao-footer">Trabalho para matéria Projeto em Ciências de Dados I</div>
+    <div class="integrantes">      
+        <div>Augusto Lobo</div>
+        <div>Felipe Miranda</div>
+        <div>Igor Conrado</div>
+        <div>Joshua Azze</div>
+        <div>Marcelo Reis</div>
+        <div>Tiago Lage Bacha</div>
+    </div>
+  </footer>
 
   <script src="futebol.js"></script> <!-- Script que pode popular a tabela e aplicar interações -->
 </body>

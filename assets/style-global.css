@@ -31,6 +31,11 @@ header h1{
     /* Cursor pointer para parecer clicavel o menu (ainda não está clicavel) */
 }
 
+.cabecalho a{
+    text-decoration: none;
+    margin-bottom: 55px;
+}
+
 .menu-selecao{
     background-color: #001F54;
     font-size: 15px;

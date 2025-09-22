@@ -8,43 +8,6 @@
 }
 
 /* ===================================
-   HEADER STYLES
-   =================================== */
-header {
-    height: 10vh;
-    width: 100vw;
-    background-color: #ff6b35;
-    padding: 20px;
-}
-
-header h1 {
-    color: white;
-    margin-bottom: 10px;
-}
-
-header nav a {
-    color: white;
-    margin-right: 20px;
-    text-decoration: none;
-}
-
-/* ===================================
-   FOOTER STYLES
-   =================================== */
-footer {
-    height: 10vh;
-    width: 100vw;
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-footer a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
 
 /* ===================================
    MAIN LAYOUT - DESKTOP GRID
@@ -261,22 +224,6 @@ footer a {
     body {
         height: auto;
         min-height: 100vh;
-    }
-    
-    /* Header and footer mobile styles */
-    header, footer {
-        height: auto;
-        padding: 15px;
-        text-align: center;
-    }
-
-    header nav {
-        margin-top: 10px;
-    }
-
-    header nav a {
-        display: block;
-        margin: 5px 0;
     }
     
     /* Main layout - switch from grid to flexbox for mobile */
