@@ -36,11 +36,10 @@ p{
 
 .main{
     width: 100vw;
+    height: 120vh;
     border: 5px solid green;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1200px;
-    
+    grid-template-columns: 2fr 1fr;  
 }
 
 .jornal{
