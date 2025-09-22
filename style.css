@@ -1,10 +1,10 @@
 header{
-    height: 13vh;
+    height: 15vh;
     border: 2px solid black;
     margin: 3px;
 }
 footer{
-    height:13vh;
+    height:15vh;
     border: 2px solid black;
     margin: 3px;
 }
@@ -517,7 +517,13 @@ section{
     }
      .ultimas_noticias [class^="tit_not_peq"],
      .ultimas_noticias [class^="txt_not_peq"] {
-        margin-top: 0;
+        margin-top: -10px;
         padding: 0 10px;
+    }
+    .ultimas_noticias [class^="tit_not_peq"]{
+        margin-bottom: -20px;
+    }
+    .ultimas_noticias [class^="txt_not_peq"]{
+        margin-bottom: 40px;
     }
 }
