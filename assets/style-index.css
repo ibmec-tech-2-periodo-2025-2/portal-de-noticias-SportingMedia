@@ -23,27 +23,27 @@ section.corpo-do-site{
 
 #noticia-1{
     grid-column: 1/3;
-    grid-row: 1/4;
+    grid-row: 1/3;
 }
 
 #noticia-2{
     grid-column: 1/2;
-    grid-row: 4/5;
+    grid-row: 3/4;
 }
 
 #noticia-3{
     grid-column: 2/3;
-    grid-row: 4/5;
+    grid-row: 3/4;
 }
 
 #noticia-4{
     grid-column: 1/2;
-    grid-row: 5/6;
+    grid-row: 4/5;
 }
 
 #noticia-5{
     grid-column: 2/3;
-    grid-row: 5/6;
+    grid-row: 4/5;
 }
 
 .noticia-menor{
@@ -91,8 +91,8 @@ section.corpo-do-site{
     align-items: center;
 }
 .imagem-maior{
-    height: 720px;
-    width: 1080px;
+    height: 360px;
+    width: 80vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -116,12 +116,12 @@ section.corpo-do-site{
 
 .texto-maior h1{
     color: #001F54;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .texto-maior p{
     color: #0a1128;
-    font-size: 20px
+    font-size: 15px;
 }
 
 
@@ -141,7 +141,7 @@ section.corpo-do-site{
 }
 
 .imagem-maior{
-    height: 100px;
+    height: 150px;
     width: 180px
 }
 
@@ -178,6 +178,4 @@ section.corpo-do-site{
     justify-content:flex-start;
     align-items: flex-start;
 }
-
-
 }
