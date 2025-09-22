@@ -10,7 +10,7 @@ section.corpo-do-site{
     width:90vw;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(5,1fr);
+    grid-template-rows: repeat(4,1fr);
     gap:20px;
     padding:10px
 }
