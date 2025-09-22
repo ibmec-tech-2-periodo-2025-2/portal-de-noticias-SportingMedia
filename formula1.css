@@ -36,11 +36,11 @@ p{
 
 .main{
     width: 100vw;
-
     border: 5px solid green;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1000px;
+    grid-template-rows: 1200px;
+    
 }
 
 .jornal{
@@ -113,9 +113,10 @@ p{
 .noticia{
     border: 5px solid pink;
     display: grid;
+    grid-template-rows: repeat(2, 1fr);
     grid-row: 2/3;
-    grid-template-rows: 1fr 1fr; 
-    align-items: stretch;
+    grid-template-rows: auto 1fr;
+
     overflow: hidden;
 }
 
@@ -126,13 +127,13 @@ p{
     object-fit: cover;
     display: block;
     object-position: 30% 20%;
+    /*margin-bottom: -70px;*/
 }
 
 .texto-secundario{
-    padding: 12px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-row: 2/3;
-    gap: 6px;
 }
 
 .classificacao{
@@ -150,6 +151,7 @@ p{
     border: 5px #000000;
     width: 100%;
     height: 100%;
+    display: grid;
     gap: 12px;
     padding: 10px;
 }
@@ -159,9 +161,10 @@ p{
     width: 100%;
     border: 5px solid blue;
     display: flex;
+    grid-row: 2/11;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items:baseline;
+    border-collapse: y;
 }
 
 .pilotos{
@@ -176,9 +179,10 @@ p{
     width: 100%;
     border: 5px solid red;
     display: flex;
+    grid-row: 11/20;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items:baseline;
+    
 }
 
 .times{
@@ -187,6 +191,25 @@ p{
     grid-template-columns: 1fr 2fr 3fr 1fr;
     place-items: center;
     padding: 3px;
+}
+
+.imagem-piloto {
+    width: 25px;         
+    height: 25px;
+    border-radius: 100%;  
+    overflow: hidden;     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;    
+}
+
+.imagem-piloto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+    object-position: 50% -10%; 
+    transform: scale(2); 
 }
 
 .imagem-tabela img{
