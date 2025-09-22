@@ -46,7 +46,7 @@ const logoMap = {
   "Sport Recife":    "SportRecife.png"
 };
 
-const logoSrc = (team) => encodeURI(logoMap[team] || "");
+const logoSrc = (team) => encodeURI("./img/" + (logoMap[team] || ""));
 
 /* ============== Referências aos elementos da tabela no DOM ============== */
 const brTitle = document.getElementById("br-title");

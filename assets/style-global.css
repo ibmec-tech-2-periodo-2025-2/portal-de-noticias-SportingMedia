@@ -50,6 +50,15 @@ header h1{
     padding: 10px;
 }
 
+.menu-selecao div a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-selecao div a:hover{
+    color: inherit;
+}
+
 footer{
     background-color: #0A1128;
     color: #FEFCFB;
@@ -125,6 +134,15 @@ footer{
     text-align: center;
     align-items: center;
     justify-content: center;
+    }
+
+    .menu-selecao div a{
+    text-decoration: none;
+    color: inherit;
+    }
+
+    .menu-selecao div a:hover{
+    color: inherit;
     }
 
     footer{
