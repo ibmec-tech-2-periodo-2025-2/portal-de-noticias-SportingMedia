@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: border-box;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+.cabecalho{
+    background-color: #034078;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    height: 70px;
+    margin:10px;
+    margin-left: 20px;
+}
+
+header h1{
+    color: #FEFCFB;
+    font-size: 30px;
+}
+
+.menu{
+    height:40px;
+    position: absolute;
+    right: 0px;
+    margin: 10px;
+    cursor: pointer; 
+    /* Cursor pointer para parecer clicavel o menu (ainda não está clicavel) */
+}
+
+.menu-selecao{
+    background-color: #001F54;
+    font-size: 15px;
+    font-weight: 400;
+    color: #FEFCFB;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: solid #0A1128 2px;
+}
+
+.menu-selecao div:hover{
+    color:#00c8ff;
+}
+
+.menu-selecao div{
+    padding: 10px;
+}
+
+footer{
+    background-color: #0A1128;
+    color: #FEFCFB;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: solid #1282A2 2px;
+}
+
+.primeira-parte-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.primeira-parte-footer img{
+    height: 50px;
+}
+
+.primeira-parte-footer h1{
+    font-size: 20px;
+}
+
+.descricao-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.integrantes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Mobile */
+@media screen and (orientation: portrait){
+
+    .logo{
+    height: 50px;
+    margin:10px;
+    }
+
+    header h1{
+    color: #FEFCFB;
+    font-size: 20px;
+    }
+
+    .menu{
+    height:30px;
+    position: absolute;
+    right: 0px;
+    margin: 10px;
+    }
+
+    .menu-selecao{
+    background-color: #001F54;
+    font-size: 12px;
+    font-weight: 400;
+    color: #FEFCFB;
+    display: flex;
+    justify-content:center;
+    gap: 4px;
+    border-bottom: solid #0A1128 2px;
+    }
+
+    .menu-selecao div{
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    }
+
+    footer{
+    background-color: #0A1128;
+    color: #FEFCFB;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: solid #1282A2 2px;
+    }
+
+    .primeira-parte-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .primeira-parte-footer img{
+        height: 40px;
+    }
+
+    .primeira-parte-footer h1{
+        font-size: 15px;
+    }
+
+    .descricao-footer{
+        display: flex;
+        justify-content: center;
+        font-size: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .integrantes{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 12px;
+    }
+}
