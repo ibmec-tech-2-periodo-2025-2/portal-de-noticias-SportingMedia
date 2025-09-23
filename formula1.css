@@ -50,7 +50,7 @@ p{
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
     gap: 12px; 
 }
 
@@ -85,14 +85,14 @@ p{
     grid-row: 1/2;
     grid-column: 3/4;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     position: relative;    
     overflow: hidden;        
 }
 
 .noticia-lateral img{
     width: 100%;
-    height: 50%;
+    height: auto;
     object-fit: cover;
     display: block;
 }
@@ -108,16 +108,14 @@ p{
 
 .noticia{
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: auto auto;
     grid-row: 2/3;
-    grid-template-rows: auto 1fr;
-    background-color: #eee;
     overflow: hidden;
 }
 
 .noticia img{
     width: 100%;
-    height: 50%;
+    height: auto;
     grid-row: 1/2;
     object-fit: cover;
     display: block;
@@ -145,10 +143,12 @@ p{
 
 .tabela-pilotos{
     width: 100%;
+    height: 450px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     border-collapse: collapse;
+    overflow-y: auto;
 }
 
 .pilotos{
@@ -214,64 +214,99 @@ p{
     align-items: center;
 }
 
-
+/* Media Query para Celular */
 @media screen and (max-width: 768px) and (orientation: portrait) {
-    .footer{
-    height: 15vh;
-    font-size: 200%;
-    order: 4;
+    
+    body{
+        height: auto;
+        min-height: 100vh;
     }
-}
-
-@media (max-width: 1024px){
-  .main{
-    grid-template-columns: 3fr 2fr; 
-  }
-  .noticias{
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto auto auto;
-  }
-  .noticia-principal{ grid-column:1/3; grid-row:1/2; }
-  .noticia-lateral{ grid-column:1/3; grid-row:2/3; grid-template-rows:1fr 1fr; }
-  .noticia{ grid-column:auto; grid-row:3/4; } 
-  .pilotos,.times{
-    grid-template-columns: .8fr 2fr 2.2fr .8fr; 
-  }
-}
-
-
-@media (max-width: 768px){
-  
-  .header,.footer{ min-height:12vh; }
-  .main{
-    grid-template-columns: 1fr;   
-    min-height:auto;              
-  }
-
-  
-  .noticias{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .noticia-principal{ grid-column:1/2; }
-  .noticia-lateral{ grid-column:1/2; grid-template-rows:auto; }
-  .noticia{ aspect-ratio:auto; grid-template-rows:auto 1fr; }
-  .noticia img{ height:auto; }
-
-  
-  .tabelas{
-    max-height: 60vh; 
-  }
-  .pilotos,.times{
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    gap:4px; padding:6px 2px;
-  }
-  .imagem-piloto{ width:22px; height:22px; }
-  .imagem-tabela img{ height:22px; }
-}
-
-@media (max-width: 480px){
-  h2{ font-size:1rem; }
-  .pilotos,.times{ grid-template-columns: .8fr 2.2fr 1.8fr .8fr; }
-  .tabelas{ max-height: 55vh; }
+    
+    .header{
+        height: 15vh;
+        font-size: 150%;
+    }
+    
+    .main{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin: 0;
+        gap: 15px;
+    }
+    
+    .noticias{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        order: 1;
+    }
+    
+    .noticia-principal{
+        grid-row: unset;
+        grid-column: unset;
+    }
+    
+    .noticia-lateral{
+        grid-row: unset;
+        grid-column: unset;
+        grid-template-rows: auto auto;
+    }
+    
+    .noticia{
+        grid-row: unset;
+        grid-column: unset;
+        grid-template-rows: auto auto;
+    }
+    
+    .noticia img{
+        height: auto;
+        max-height: 200px;
+    }
+    
+    .tabelas{
+        order: 2;
+        padding: 10px;
+    }
+    
+    .tabela-pilotos{
+        height: 350px;
+    }
+    
+    .pilotos, .times{
+        grid-template-columns: 0.8fr 2fr 2.2fr 0.8fr;
+        gap: 4px;
+        padding: 6px 2px;
+    }
+    
+    .imagem-piloto{
+        width: 22px;
+        height: 22px;
+    }
+    
+    .imagem-tabela img{
+        height: 22px;
+    }
+    
+    h2{
+        font-size: 1.2rem;
+    }
+    
+    h3{
+        font-size: 1rem;
+    }
+    
+    h4{
+        font-size: 0.9rem;
+    }
+    
+    p{
+        font-size: 0.85rem;
+    }
+    
+    .footer{
+        height: 15vh;
+        font-size: 150%;
+    }
 }

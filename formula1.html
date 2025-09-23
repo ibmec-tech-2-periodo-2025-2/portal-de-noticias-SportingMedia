@@ -4,23 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporting Media - Fórmula 1</title>
+    <link rel="stylesheet" href="./assets/style-global.css">
     <link rel="stylesheet" href="formula1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header"> HEADER </div>
+    <header>
+        <section class="cabecalho">
+            <img src="./img/Logo-portal-noticia.png" alt="Logo-portal-noticias" class="logo">
+            <h1>Sporting Media</h1>
+            <a href="./main.html"><img src="./img/icon-casa.png" alt="ícone de casa" class="menu"></a>
+        </section>
+
+        <section class="menu-selecao">
+            <div><a href="./futebol.html">Futebol</a></div>
+            <div><a href="./futebolamericano.html">Futebol Americano</a></div>
+            <div><a href="./UFC.html">UFC</a></div>
+            <div><a href="./basquete.html">Basquete</a></div>
+            <div><a href="./formula1.html">Fórmula 1</a></div>
+        </section>
+
+    </header>
     <div class="main">
         <div class="jornal">
             <div class="noticias">
 
                 <div class="noticia-principal" id="n1">
-                    <img src="./noticia_principal.jpg" alt="Max Verstappen vence">
+                    <img src="./img/noticia_principal.jpg" alt="Max Verstappen vence">
                     <div class="texto-principal">
                         <h2>Max Verstappen vence o GP do Azerbaijão e preocupa McLaren</h2>
                     </div>
                 </div>
 
                 <div class="noticia-lateral" id="n2">
-                    <img src="./noticia2.jpg" alt="Gabriel Bortoleto">
+                    <img src="./img/noticia2.jpg" alt="Gabriel Bortoleto">
                     <div class="texto-lateral">
                          <h3>Oscar Piastri bate e adia conquista do título do campeonato para McLaren</h3>
                         <p>A McLaren chegou ao GP do Azerbaijão com ótimas chances de conquistar o título do campeonato de construtores com sete rodadas de antecedência na Fórmula 1, o que seria um recorde absoluto. No entanto, o mau desempenho de Oscar Piastri e Lando Norris em Baku no domingo (21) fez com que a conquista fosse adiada. Ainda assim, o time inglês está muito perto de ser campeão pela décima vez.</p>
@@ -29,7 +48,7 @@
                 </div>
 
                 <div class="noticia" id="n3">
-                    <img src="./noticia3.jpg" alt="Oscar Piastri bate o carro">
+                    <img src="./img/noticia3.jpg" alt="Oscar Piastri bate o carro">
                     <div class="texto-secundario">
                         <h4>Bortoleto diz que fez “até mais que podia” no Azerbaijão: “Corrida difícil de pontuar”</h4>
                         <p>Gabriel Bortoleto ficou a uma posição de pontuar no Azerbaijão, mas sai com a sensação de que foi além do que a Sauber lhe permitia na corrida deste domingo (21)</p>
@@ -38,7 +57,7 @@
                 </div>
 
                 <div class="noticia" id="n4">
-                    <img src="./noticia4.jpg" alt="Carlos Sainz vence">
+                    <img src="./img/noticia4.jpg" alt="Carlos Sainz vence">
                     <div class="texto-secundario">
                         <h4>Carlos Sainz celebra seu primeiro pódio pela Williams: "Melhor da carreira"</h4>
                         <p>Com 28 términos no top 3 na Fórmula 1, espanhol deu fim a jejum da equipe que durava desde 2021. Piloto comemorou citando música "Smooth Operator", marcante em sua trajetória</p>
@@ -46,7 +65,7 @@
                 </div>
 
                 <div class="noticia" id="n5">
-                    <img src="./noticia5.jpg" alt="GP de Singapura">
+                    <img src="./img/noticia5.jpg" alt="GP de Singapura">
                     <div class="texto-secundario">
                        <h4>Próxima corrida da F1 2025: veja data do GP de Singapura</h4>
                        <p>Depois da vitória de Max Verstappen no Azerbaijão, Fórmula 1 terá pausa de uma semana e retorna apenas no início de outubro. Prova será no circuito de Marina Bay</p>
@@ -69,7 +88,7 @@
                 <div class="pilotos" id="piloto1">
                     <div class="numero">1</div>
                     <div class="imagem-piloto">
-                        <img src="./piastri.avif" alt="">
+                        <img src="./img/piastri.avif" alt="">
                     </div>
                     <div class="nome">Oscar Piastri</div>
                     <div class="pontuacao">324 pts</div> 
@@ -77,7 +96,7 @@
                 <div class="pilotos" id="piloto2">
                     <div class="numero">2</div>
                     <div class="imagem-piloto">
-                        <img src="./norris.avif" alt="">
+                        <img src="./img/norris.avif" alt="">
                     </div>
                     <div class="nome">Lando Norris</div>
                     <div class="pontuacao">299 pts</div> 
@@ -85,7 +104,7 @@
                 <div class="pilotos" id="piloto3">
                     <div class="numero">3</div>
                     <div class="imagem-piloto">
-                        <img src="./verstappen.avif" alt="">
+                        <img src="./img/verstappen.avif" alt="">
                     </div>
                     <div class="nome">Max Verstappen</div>
                     <div class="pontuacao">255 pts</div> 
@@ -93,7 +112,7 @@
                 <div class="pilotos" id="piloto4">
                     <div class="numero">4</div>
                     <div class="imagem-piloto">
-                        <img src="./russel.avif" alt="">
+                        <img src="./img/russel.avif" alt="">
                     </div>
                     <div class="nome">George Russel</div>
                     <div class="pontuacao">212 pts</div> 
@@ -101,7 +120,7 @@
                 <div class="pilotos" id="piloto5">
                     <div class="numero">5</div>
                      <div class="imagem-piloto">
-                        <img src="./leclerc.avif" alt="">
+                        <img src="./img/leclerc.avif" alt="">
                     </div>
                     <div class="nome">Charles Leclerc</div>
                     <div class="pontuacao">165 pts</div> 
@@ -109,7 +128,7 @@
                 <div class="pilotos" id="piloto6">
                     <div class="numero">6</div>
                      <div class="imagem-piloto">
-                        <img src="./hamilton.avif" alt="">
+                        <img src="./img/hamilton.avif" alt="">
                     </div>
                     <div class="nome">Lewis Hamilton</div>
                     <div class="pontuacao">121 pts</div> 
@@ -117,7 +136,7 @@
                 <div class="pilotos" id="piloto7">
                     <div class="numero">7</div>
                      <div class="imagem-piloto">
-                        <img src="./antonelli.avif" alt="">
+                        <img src="./img/antonelli.avif" alt="">
                     </div>
                     <div class="nome">Kimi Antonelli</div>
                     <div class="pontuacao">78 pts</div> 
@@ -125,7 +144,7 @@
                 <div class="pilotos" id="piloto8">
                     <div class="numero">8</div>
                      <div class="imagem-piloto">
-                        <img src="./albon.avif" alt="">
+                        <img src="./img/albon.avif" alt="">
                     </div>
                     <div class="nome">Alexander Albon</div>
                     <div class="pontuacao">70 pts</div> 
@@ -133,7 +152,7 @@
                 <div class="pilotos" id="piloto9">
                     <div class="numero">9</div>
                      <div class="imagem-piloto">
-                        <img src="./hadjar.avif" alt="">
+                        <img src="./img/hadjar.avif" alt="">
                     </div>
                     <div class="nome">Isack Hadjar</div>
                     <div class="pontuacao">39 pts</div> 
@@ -141,7 +160,7 @@
                 <div class="pilotos" id="piloto10">
                     <div class="numero">10</div>
                      <div class="imagem-piloto">
-                        <img src="./hulkernberg.avif" alt="">
+                        <img src="./img/hulkernberg.avif" alt="">
                     </div>
                     <div class="nome">Nico Hulkenberg</div>
                     <div class="pontuacao">37 pts</div> 
@@ -149,7 +168,7 @@
                 <div class="pilotos" id="piloto11">
                     <div class="numero">11</div>
                     <div class="imagem-piloto">
-                        <img src="./stroll.avif" alt="">
+                        <img src="./img/stroll.avif" alt="">
                     </div>
                     <div class="nome">Lance Stroll</div>
                     <div class="pontuacao">32 pts</div> 
@@ -157,7 +176,7 @@
                 <div class="pilotos" id="piloto12">
                     <div class="numero">12</div>
                      <div class="imagem-piloto">
-                        <img src="./sainz.avif" alt="">
+                        <img src="./img/sainz.avif" alt="">
                     </div>
                     <div class="nome">Carlos Sainz</div>
                     <div class="pontuacao">31 pts</div> 
@@ -165,7 +184,7 @@
                 <div class="pilotos" id="piloto13">
                     <div class="numero">13</div>
                      <div class="imagem-piloto">
-                        <img src="./lawson.avif" alt="">
+                        <img src="./img/lawson.avif" alt="">
                     </div>
                     <div class="nome">Liam Lawson</div>
                     <div class="pontuacao">30 pts</div> 
@@ -173,7 +192,7 @@
                 <div class="pilotos" id="piloto14">
                     <div class="numero">14</div>
                      <div class="imagem-piloto">
-                        <img src="./alonso.avif" alt="">
+                        <img src="./img/alonso.avif" alt="">
                     </div>
                     <div class="nome">Fernando Alonso</div>
                     <div class="pontuacao">30 pts</div> 
@@ -181,7 +200,7 @@
                 <div class="pilotos" id="piloto15">
                     <div class="numero">15</div>
                      <div class="imagem-piloto">
-                        <img src="./ocon.avif" alt="">
+                        <img src="./img/ocon.avif" alt="">
                     </div>
                     <div class="nome">Esteban Ocon</div>
                     <div class="pontuacao">28 pts</div> 
@@ -189,7 +208,7 @@
                 <div class="pilotos" id="piloto16">
                     <div class="numero">16</div>
                      <div class="imagem-piloto">
-                        <img src="./gasly.avif" alt="">
+                        <img src="./img/gasly.avif" alt="">
                     </div>
                     <div class="nome">Pierre Gasly</div>
                     <div class="pontuacao">20 pts</div> 
@@ -197,7 +216,7 @@
                 <div class="pilotos" id="piloto17">
                     <div class="numero">17</div>
                      <div class="imagem-piloto">
-                        <img src="./tsunoda.avif" alt="">
+                        <img src="./img/tsunoda.avif" alt="">
                     </div>
                     <div class="nome">Yuki Tsunoda</div>
                     <div class="pontuacao">20 pts</div> 
@@ -205,7 +224,7 @@
                 <div class="pilotos" id="piloto18">
                     <div class="numero">18</div>
                      <div class="imagem-piloto">
-                        <img src="./bortoleto.avif" alt="">
+                        <img src="./img/bortoleto.avif" alt="">
                     </div>
                     <div class="nome">Gabriel Bortoleto</div>
                     <div class="pontuacao">18 pts</div> 
@@ -213,7 +232,7 @@
                 <div class="pilotos" id="piloto19">
                     <div class="numero">19</div>
                      <div class="imagem-piloto">
-                        <img src="./bearman.avif" alt="">
+                        <img src="./img/bearman.avif" alt="">
                     </div>
                     <div class="nome">Oliver Bearman</div>
                     <div class="pontuacao">16 pts</div> 
@@ -221,7 +240,7 @@
                 <div class="pilotos" id="piloto20">
                     <div class="numero">20</div>
                      <div class="imagem-piloto">
-                        <img src="./colapinto.avif" alt="">
+                        <img src="./img/colapinto.avif" alt="">
                     </div>
                     <div class="nome">Franco Colapinto</div>
                     <div class="pontuacao">0 pts</div> 
@@ -229,7 +248,7 @@
                 <div class="pilotos" id="piloto20">
                     <div class="numero">21</div>
                      <div class="imagem-piloto">
-                        <img src="./doohan.avif" alt="">
+                        <img src="./img/doohan.avif" alt="">
                     </div>
                     <div class="nome">Jack Doohan</div>
                     <div class="pontuacao">0 pts</div> 
@@ -245,61 +264,61 @@
                     </div>
                     <div class="times" id="time1">
                         <div class="numero">1</div>
-                        <div class="imagem-tabela"><img src="./mcl2_f1.png" alt="mclaren"></div>
+                        <div class="imagem-tabela"><img src="./img/mcl2_f1.png" alt="mclaren"></div>
                         <div class="nome">McLaren</div>
                         <div class="pontuacao">623 pts</div>  
                     </div>
                     <div class="times" id="time2">
                         <div class="numero">2</div>
-                        <div class="imagem-tabela"><img src="./mercedes_f1.png" alt="mercedes"></div>
+                        <div class="imagem-tabela"><img src="./img/mercedes_f1.png" alt="mercedes"></div>
                         <div class="nome">Mercedes</div>
                         <div class="pontuacao">290 pts</div>
                     </div>
                     <div class="times" id="time3">
                         <div class="numero">3</div>
-                        <div class="imagem-tabela"><img src="./ferrari.png" alt="ferrari"></div>
+                        <div class="imagem-tabela"><img src="./img/ferrari.png" alt="ferrari"></div>
                         <div class="nome">Ferrari</div>
                         <div class="pontuacao">286 pts</div>
                     </div>
                     <div class="times" id="time4">
                         <div class="numero">4</div>
-                        <div class="imagem-tabela"><img src="./red_bull2_logo.png" alt="red bull racing"></div>
+                        <div class="imagem-tabela"><img src="./img/red_bull2_logo.png" alt="red bull racing"></div>
                         <div class="nome">Red Bull Racing</div>
                         <div class="pontuacao">272 pts</div>
                     </div>
                     <div class="times" id="time5">
                         <div class="numero">5</div>
-                        <div class="imagem-tabela"><img src="./williams_logo.png" alt="williams"></div>
+                        <div class="imagem-tabela"><img src="./img/williams_logo.png" alt="williams"></div>
                         <div class="nome">Williams</div>
                         <div class="pontuacao">101 pts</div>
                     </div>
                     <div class="times" id="time6">
                         <div class="numero">6</div>
-                        <div class="imagem-tabela"><img src="./toro_rosso.png" alt="racing bulls"></div>
+                        <div class="imagem-tabela"><img src="./img/toro_rosso.png" alt="racing bulls"></div>
                         <div class="nome">Racing Bulls</div>
                         <div class="pontuacao">72 pts</div>
                     </div>
                     <div class="times" id="time7">
                         <div class="numero">7</div>
-                        <div class="imagem-tabela"><img src="./aston_martin_f1.png" alt="aston martin"></div>
+                        <div class="imagem-tabela"><img src="./img/aston_martin_f1.png" alt="aston martin"></div>
                         <div class="nome">Aston Martin</div>
                         <div class="pontuacao">62 pts</div>
                     </div>
                     <div class="times" id="time8">
                         <div class="numero">8</div>
-                        <div class="imagem-tabela"><img src="./alfa_romeo_sauber_f1.png" alt="kick sauber"></div>
+                        <div class="imagem-tabela"><img src="./img/alfa_romeo_sauber_f1.png" alt="kick sauber"></div>
                         <div class="nome">Kick Sauber</div>
                         <div class="pontuacao">55 pts</div>
                     </div>
                     <div class="times" id="time9">
                         <div class="numero">9</div>
-                        <div class="imagem-tabela"><img src="./haas_f1.png" alt="haas"></div>
+                        <div class="imagem-tabela"><img src="./img/haas_f1.png" alt="haas"></div>
                         <div class="nome">Haas</div>
                         <div class="pontuacao">44 pts</div>
                     </div>
                     <div class="times" id="time10">
                         <div class="numero">10</div>
-                        <div class="imagem-tabela"><img src="./alpine_f1.png" alt="alpine"></div>
+                        <div class="imagem-tabela"><img src="./img/alpine_f1.png" alt="alpine"></div>
                         <div class="nome">Alpine</div>
                         <div class="pontuacao">20 pts</div>
                     </div>
@@ -307,6 +326,20 @@
             </div>
         </div>
     </div>
-    <div class="footer"> FOOTER </div>
+    <footer>
+        <div class="primeira-parte-footer">
+            <img src="./img/Logo-portal-noticia.png" alt="Logo-portal-noticias">
+            <h1>Sporting Media</h1>
+        </div>
+        <div class="descricao-footer">Trabalho para matéria Projeto em Ciências de Dados I</div>
+        <div class="integrantes">      
+            <div>Augusto Lobo</div>
+            <div>Felipe Miranda</div>
+            <div>Igor Conrado</div>
+            <div>Joshua Azze</div>
+            <div>Marcelo Reis</div>
+            <div>Tiago Lage Bacha</div>
+        </div>
+    </footer>
 </body>
 </html>
